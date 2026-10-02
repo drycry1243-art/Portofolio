@@ -83,3 +83,44 @@ body {
     animation: none;
   }
 }
+
+/* case file card hover sweep */
+@keyframes scan {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(600%);
+  }
+}
+.group:hover .scan {
+  animation: scan 1.4s ease-in-out infinite;
+}
+
+/* case file dialog entrance */
+@keyframes dossier-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+dialog[open] .dossier {
+  animation: dossier-in 0.25s ease-out;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group:hover .scan,
+  dialog[open] .dossier,
+  .float {
+    animation: none;
+  }
+}
