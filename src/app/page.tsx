@@ -1,4 +1,5 @@
-import CaseFileCard from "@/components/CaseFileCard";
+import Image from "next/image";
+import CaseFiles from "@/components/CaseFiles";
 import HeroTerminal from "@/components/HeroTerminal";
 import SectionHeading from "@/components/SectionHeading";
 import {
@@ -47,8 +48,8 @@ export default function Home() {
 
       <main id="top" className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Hero */}
-        <section className="grid items-center gap-12 py-20 lg:grid-cols-[1.1fr_1fr] lg:py-28">
-          <div>
+        <section className="grid items-center gap-12 py-16 lg:grid-cols-[1.15fr_1fr] lg:py-24">
+          <div className="order-2 lg:order-1">
             <p className="font-mono text-sm text-accent">
               <span className="text-muted">[</span> {profile.role} <span className="text-muted">]</span>
             </p>
@@ -72,8 +73,11 @@ export default function Home() {
                 verify CRTA ↗
               </a>
             </div>
+            <div className="mt-10">
+              <HeroTerminal />
+            </div>
           </div>
-          <HeroTerminal />
+          <Portrait />
         </section>
 
         {/* Stats */}
@@ -128,11 +132,8 @@ export default function Home() {
         {/* Case files */}
         <section id="cases" className="scroll-mt-24 py-24">
           <SectionHeading index="02" label="case-files" title="Work, written up like a report." />
-          <div className="grid gap-6 md:grid-cols-2">
-            {cases.map((c) => (
-              <CaseFileCard key={c.id} c={c} />
-            ))}
-          </div>
+          <p className="-mt-6 mb-8 font-mono text-sm text-muted">hover to preview · click to open the full report</p>
+          <CaseFiles cases={cases} />
         </section>
 
         {/* Arsenal */}
@@ -216,6 +217,37 @@ export default function Home() {
         © {new Date().getFullYear()} {profile.name} · built with Next.js · hack responsibly
       </footer>
     </>
+  );
+}
+
+function Portrait() {
+  return (
+    <div className="relative order-1 mx-auto w-full max-w-[250px] sm:max-w-sm lg:order-2 lg:max-w-none">
+      {/* glow + grid behind the cutout */}
+      <div className="absolute inset-x-[8%] bottom-0 top-[12%] rounded-t-full bg-[radial-gradient(circle_at_50%_35%,rgb(61_255_154/0.28),transparent_65%)]" />
+      <div className="absolute inset-x-[8%] bottom-0 top-[12%] rounded-t-full border border-accent/20" />
+
+      {/* HUD corner brackets */}
+      <span className="absolute left-0 top-[8%] h-8 w-8 border-l-2 border-t-2 border-accent/70" />
+      <span className="absolute right-0 top-[8%] h-8 w-8 border-r-2 border-t-2 border-accent/70" />
+
+      <div className="float relative">
+        <Image
+          src="/jovan.webp"
+          alt={`Portrait of ${profile.name}`}
+          width={900}
+          height={1618}
+          loading="eager"
+          fetchPriority="high"
+          sizes="(min-width: 1024px) 480px, 384px"
+          className="relative mx-auto h-auto max-h-[360px] w-auto sm:max-h-[520px] lg:max-h-[640px] [mask-image:linear-gradient(to_bottom,black_75%,transparent)]"
+        />
+      </div>
+
+      <div className="absolute bottom-6 left-1/2 w-max -translate-x-1/2 rounded border border-accent/40 bg-bg/85 px-3 py-1.5 font-mono text-[11px] text-fg/80 backdrop-blur sm:text-xs">
+        <span className="text-accent">●</span> ID: JOVAN_DAVE <span className="text-muted">{"//"}</span> RED TEAM
+      </div>
+    </div>
   );
 }
 

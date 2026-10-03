@@ -40,6 +40,7 @@ export type CaseFile = {
   summary: string;
   scope: string;
   tools: string[];
+  approach: string[];
   findings: string[];
   lessons: string[];
 };
@@ -55,6 +56,13 @@ export const cases: CaseFile[] = [
       "Penetration test of a government Android application following the OWASP MASTG, delivered as a structured vulnerability findings report.",
     scope: "Government Android application (static + dynamic analysis)",
     tools: ["Burp Suite", "Frida", "Objection", "JADX", "MobSF", "OWASP MASTG"],
+    approach: [
+      "Recon: pulled the APK and mapped its attack surface against the OWASP MASTG checklist",
+      "Static analysis: decompiled with JADX and scanned with MobSF for secrets, insecure storage and weak configs",
+      "Dynamic analysis: hooked the running app with Frida and Objection to inspect and tamper with traffic",
+      "Access control testing: replayed and modified requests in Burp Suite to test authorization",
+      "Reporting: compiled a structured findings report",
+    ],
     findings: [
       "Broken access control (IDOR) exposing other users' data",
       "Source review of the decompiled APK with JADX and MobSF",
@@ -75,6 +83,14 @@ export const cases: CaseFile[] = [
       "Team walkthrough of a Hard-rated machine that required chaining seven vulnerabilities from a login page all the way to root.",
     scope: "HTB machine \"Guardian\" (Linux, PHP web stack)",
     tools: ["Nmap", "Burp Suite", "PHP filter chains", "Kali Linux"],
+    approach: [
+      "Default credentials got a foothold in the web app",
+      "IDOR exposed data belonging to other users",
+      "Hardcoded credentials found in the application source",
+      "Stored XSS (CVE-2025-22131) chained with CSRF",
+      "LFI escalated to RCE through PHP filter chains",
+      "Privilege escalation to root",
+    ],
     findings: [
       "Default credentials → IDOR → hardcoded credentials in source",
       "Stored XSS (CVE-2025-22131) and CSRF",
@@ -95,6 +111,13 @@ export const cases: CaseFile[] = [
       "Academic paper proposing a framework to automatically discover and risk-score non-human identities (service accounts, API keys, OAuth tokens) in enterprise IAM.",
     scope: "Enterprise Identity & Access Management",
     tools: ["Weighted risk scoring", "Machine learning", "STRIDE", "OAuth / JWT"],
+    approach: [
+      "Reviewed IAM fundamentals: authentication, authorization and the identity lifecycle",
+      "Catalogued non-human identities: service accounts, API keys, OAuth tokens",
+      "Designed a weighted risk-scoring model, combined with machine learning",
+      "Threat-modeled common IAM attack paths",
+      "Proposed a tiered \"Double IAM, Double Backend\" architecture",
+    ],
     findings: [
       "Mapped attack vectors: IDOR/BOLA, token hijacking, MFA fatigue, privilege creep",
       "Proposed a \"Double IAM, Double Backend\" tiered architecture for credential isolation",
@@ -114,6 +137,13 @@ export const cases: CaseFile[] = [
       "Team-built flood early-warning system covering 26 subdistricts across 5 Jakarta regions, presented under PKM-KC, Indonesia's national student innovation program.",
     scope: "26 subdistricts · 5 regions · 6-hour prediction lead time",
     tools: ["HistGradientBoosting", "Python", "ML pipeline", "Dashboard"],
+    approach: [
+      "Scoped coverage: 26 subdistricts across 5 Jakarta regions",
+      "Designed the pipeline from sensor data to flood prediction",
+      "Chose a HistGradientBoosting model with a 6-hour prediction lead time",
+      "Built a smart dashboard to review and predict weather (dummy data)",
+      "Presented the project under PKM-KC",
+    ],
     findings: [
       "Designed the solution architecture around a HistGradientBoosting model",
       "Built a smart dashboard to review and predict weather data (dummy data)",
