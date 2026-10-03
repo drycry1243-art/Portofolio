@@ -12,7 +12,7 @@ export const profile = {
   github: "https://github.com/drycry1243-art",
   about: [
     "I'm a Cybersecurity student at BINUS University and an aspiring junior security practitioner with a strong pull toward offensive security. Most of my learning happens hands-on: home labs, Hack The Box machines and picoCTF challenges.",
-    "I like understanding how things fail. That means mobile app pentests, chaining small bugs into full compromise, and researching how identities (human and non-human) get abused inside enterprise systems.",
+    "I like understanding how things fail. That means chaining small bugs into full compromise through hands-on labs and CTF challenges.",
   ],
   education: {
     school: "Bina Nusantara University",
@@ -25,7 +25,7 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "4", label: "case files closed" },
+  { value: "2", label: "case files closed" },
   { value: "CRTA", label: "red team certified" },
   { value: "7", label: "vuln chain to root" },
   { value: "26", label: "subdistricts covered" },
@@ -48,33 +48,6 @@ export type CaseFile = {
 export const cases: CaseFile[] = [
   {
     id: "CASE-001",
-    title: "Mobile Penetration Testing",
-    type: "Android App Pentest",
-    period: "Feb – Jun 2026",
-    severity: "High",
-    summary:
-      "Penetration test of a government Android application following the OWASP MASTG, delivered as a structured vulnerability findings report.",
-    scope: "Government Android application (static + dynamic analysis)",
-    tools: ["Burp Suite", "Frida", "Objection", "JADX", "MobSF", "OWASP MASTG"],
-    approach: [
-      "Recon: pulled the APK and mapped its attack surface against the OWASP MASTG checklist",
-      "Static analysis: decompiled with JADX and scanned with MobSF for secrets, insecure storage and weak configs",
-      "Dynamic analysis: hooked the running app with Frida and Objection to inspect and tamper with traffic",
-      "Access control testing: replayed and modified requests in Burp Suite to test authorization",
-      "Reporting: compiled a structured findings report",
-    ],
-    findings: [
-      "Broken access control (IDOR) exposing other users' data",
-      "Source review of the decompiled APK with JADX and MobSF",
-      "Runtime instrumentation with Frida and Objection",
-    ],
-    lessons: [
-      "Reading decompiled source to map attack surface fast",
-      "Turning raw findings into a report stakeholders can act on",
-    ],
-  },
-  {
-    id: "CASE-002",
     title: "Guardian, Hack The Box",
     type: "CTF Machine (Hard)",
     period: "Aug – Sep 2025",
@@ -102,33 +75,7 @@ export const cases: CaseFile[] = [
     ],
   },
   {
-    id: "CASE-003",
-    title: "Non-Human Identity Risk Scoring",
-    type: "IAM Research Paper",
-    period: "Feb – Jun 2026",
-    severity: "Research",
-    summary:
-      "Academic paper proposing a framework to automatically discover and risk-score non-human identities (service accounts, API keys, OAuth tokens) in enterprise IAM.",
-    scope: "Enterprise Identity & Access Management",
-    tools: ["Weighted risk scoring", "Machine learning", "STRIDE", "OAuth / JWT"],
-    approach: [
-      "Reviewed IAM fundamentals: authentication, authorization and the identity lifecycle",
-      "Catalogued non-human identities: service accounts, API keys, OAuth tokens",
-      "Designed a weighted risk-scoring model, combined with machine learning",
-      "Threat-modeled common IAM attack paths",
-      "Proposed a tiered \"Double IAM, Double Backend\" architecture",
-    ],
-    findings: [
-      "Mapped attack vectors: IDOR/BOLA, token hijacking, MFA fatigue, privilege creep",
-      "Proposed a \"Double IAM, Double Backend\" tiered architecture for credential isolation",
-    ],
-    lessons: [
-      "IAM fundamentals: authN, authZ and the identity lifecycle",
-      "Spotting gaps before they become breaches",
-    ],
-  },
-  {
-    id: "CASE-004",
+    id: "CASE-002",
     title: "Jakarta Flood Early Warning System",
     type: "PKM-KC National Grant Project",
     period: "Feb – Jun 2026",
@@ -158,15 +105,11 @@ export const cases: CaseFile[] = [
 export const arsenal = [
   {
     group: "Penetration Testing",
-    items: ["Burp Suite", "Frida", "Objection", "MobSF", "JADX", "Nmap"],
+    items: ["Burp Suite", "Nmap", "Metasploit", "Gobuster"],
   },
   {
     group: "Red Teaming",
     items: ["Recon", "Network pivoting (Ligolo)", "MITRE ATT&CK", "Active Directory", "Kerberos attacks"],
-  },
-  {
-    group: "IAM & Threat Modeling",
-    items: ["OAuth", "JWT", "SSO", "IDOR / BOLA", "STRIDE"],
   },
   {
     group: "Networking",
