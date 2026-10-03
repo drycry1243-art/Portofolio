@@ -12,7 +12,7 @@ export const profile = {
   github: "https://github.com/drycry1243-art",
   about: [
     "I'm a Cybersecurity student at BINUS University and an aspiring junior security practitioner with a strong pull toward offensive security. Most of my learning happens hands-on: home labs, Hack The Box machines and picoCTF challenges.",
-    "I like understanding how things fail. That means chaining small bugs into full compromise through hands-on labs and CTF challenges.",
+    "I like understanding how things fail. That means chaining small bugs into full compromise, and researching how identities (human and non-human) get abused inside enterprise systems.",
   ],
   education: {
     school: "Bina Nusantara University",
