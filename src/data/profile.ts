@@ -25,7 +25,7 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "2", label: "case files closed" },
+  { value: "3", label: "case files closed" },
   { value: "CRTA", label: "red team certified" },
   { value: "7", label: "vuln chain to root" },
   { value: "26", label: "subdistricts covered" },
@@ -76,6 +76,32 @@ export const cases: CaseFile[] = [
   },
   {
     id: "CASE-002",
+    title: "Non-Human Identity Risk Scoring",
+    type: "IAM Research Paper",
+    period: "Feb – Jun 2026",
+    severity: "Research",
+    summary:
+      "Academic paper proposing a framework to automatically discover and risk-score non-human identities (service accounts, API keys, OAuth tokens) in enterprise IAM.",
+    scope: "Enterprise Identity & Access Management",
+    tools: ["Weighted risk scoring", "Machine learning", "STRIDE", "OAuth / JWT"],
+    approach: [
+      "Reviewed IAM fundamentals: authentication, authorization and the identity lifecycle",
+      "Catalogued non-human identities: service accounts, API keys, OAuth tokens",
+      "Designed a weighted risk-scoring model, combined with machine learning",
+      "Threat-modeled common IAM attack paths",
+      "Proposed a tiered \"Double IAM, Double Backend\" architecture",
+    ],
+    findings: [
+      "Mapped attack vectors: IDOR/BOLA, token hijacking, MFA fatigue, privilege creep",
+      "Proposed a \"Double IAM, Double Backend\" tiered architecture for credential isolation",
+    ],
+    lessons: [
+      "IAM fundamentals: authN, authZ and the identity lifecycle",
+      "Spotting gaps before they become breaches",
+    ],
+  },
+  {
+    id: "CASE-003",
     title: "Jakarta Flood Early Warning System",
     type: "PKM-KC National Grant Project",
     period: "Feb – Jun 2026",
@@ -110,6 +136,10 @@ export const arsenal = [
   {
     group: "Red Teaming",
     items: ["Recon", "Network pivoting (Ligolo)", "MITRE ATT&CK", "Active Directory", "Kerberos attacks"],
+  },
+  {
+    group: "IAM & Threat Modeling",
+    items: ["OAuth", "JWT", "SSO", "IDOR / BOLA", "STRIDE"],
   },
   {
     group: "Networking",
