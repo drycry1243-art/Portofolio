@@ -5,7 +5,7 @@ export const profile = {
   handle: "jovan",
   role: "Aspiring Junior Cybersecurity Practitioner",
   tagline:
-    "Cybersecurity student at BINUS University with a strong interest in penetration testing, offensive and defensive security.",
+    "Cybersecurity student at BINUS University with a strong interest in penetration testing, offensive and defensive security. All by God's grace.",
   location: "Kembangan Utara, West Jakarta 11610",
   email: "jovan.dv31@gmail.com",
   linkedin: "https://www.linkedin.com/in/jovan-dave-34765a326/",

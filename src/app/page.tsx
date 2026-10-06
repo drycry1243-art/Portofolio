@@ -224,7 +224,8 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-line py-8 text-center font-mono text-xs text-muted">
-        © {new Date().getFullYear()} {profile.name} · built with Next.js · hack responsibly
+        <p>© {new Date().getFullYear()} {profile.name} · built with Next.js · hack responsibly</p>
+        <p className="mt-1 text-muted/50 italic">Soli Deo Gloria</p>
       </footer>
     </>
   );

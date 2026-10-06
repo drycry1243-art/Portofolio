@@ -14,7 +14,7 @@ const SCRIPT: Line[] = [
     cmd: "ls ./case-files",
     out: ["htb-guardian/  mobile-pentest/  iam-research/  flood-ews/"],
   },
-  { cmd: "echo $STATUS", out: ["open to internships & collaboration"] },
+  { cmd: "echo $STATUS", out: ["open to internships & collaboration · Soli Deo Gloria"] },
 ];
 
 const TYPE_MS = 45;
