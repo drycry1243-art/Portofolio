@@ -1,25 +1,56 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Landing() {
-  const [visible, setVisible] = useState(true);
   const [firstLoad, setFirstLoad] = useState(true);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => {
-      setVisible(window.scrollY < 60);
-      if (firstLoad && window.scrollY >= 60) setFirstLoad(false);
+    const el = ref.current;
+    if (!el) return;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const update = () => {
+      const scrollY = window.scrollY;
+      const fadeEnd = window.innerHeight * 0.35;
+
+      if (scrollY <= 0) {
+        el.style.opacity = "1";
+        el.style.transform = "scale(1)";
+        el.style.pointerEvents = "auto";
+        el.style.filter = "blur(0px)";
+      } else if (scrollY < fadeEnd) {
+        const t = scrollY / fadeEnd;
+        el.style.opacity = String(1 - t);
+        el.style.transform = `scale(${1 + t * 0.05})`;
+        el.style.pointerEvents = "none";
+        el.style.filter = `blur(${t * 6}px)`;
+      } else {
+        el.style.opacity = "0";
+        el.style.transform = "scale(1.05)";
+        el.style.pointerEvents = "none";
+        el.style.filter = "blur(6px)";
+      }
+
+      if (firstLoad && scrollY >= fadeEnd) setFirstLoad(false);
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    if (reduced) {
+      el.style.transition = "opacity 0.3s";
+    }
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
   }, [firstLoad]);
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-bg transition-opacity duration-500 ${
-        visible ? "opacity-100" : "pointer-events-none opacity-0"
-      }`}
+      ref={ref}
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-bg"
+      style={{ willChange: "opacity, transform, filter" }}
     >
       <div className="absolute inset-0 grid-bg opacity-40" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgb(0_212_255/0.08),transparent_70%)]" />
