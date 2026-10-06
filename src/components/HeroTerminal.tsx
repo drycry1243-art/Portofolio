@@ -41,7 +41,7 @@ export default function HeroTerminal() {
   }, [done, chars]);
 
   return (
-    <div className="scanlines relative overflow-hidden rounded-xl border border-line bg-panel/90 shadow-[0_0_80px_-20px_rgb(61_255_154/0.25)] backdrop-blur">
+    <div className="scanlines relative overflow-hidden rounded-xl border border-line bg-panel/90 shadow-[0_0_80px_-20px_rgb(0_212_255/0.25)] backdrop-blur">
       <div className="flex items-center gap-2 border-b border-line px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-red/80" />
         <span className="h-3 w-3 rounded-full bg-amber/80" />

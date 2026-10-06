@@ -6,7 +6,7 @@
   --line: #1c2430;
   --fg: #d7dee8;
   --muted: #7d8a9c;
-  --accent: #3dff9a;
+  --accent: #00d4ff;
   --amber: #ffb547;
   --red: #ff5f6d;
 }
@@ -63,7 +63,58 @@ body {
 }
 
 .glow {
-  text-shadow: 0 0 18px rgb(61 255 154 / 0.45);
+  text-shadow: 0 0 18px rgb(0 212 255 / 0.45);
+}
+
+/* Fullscreen landing title */
+@keyframes landing-fade {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+.landing {
+  animation: landing-fade 0.6s ease-out 2.4s forwards;
+}
+@keyframes landing-text-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.landing-text {
+  opacity: 0;
+  animation: landing-text-up 0.8s ease-out 0.3s forwards;
+}
+.landing-sub {
+  opacity: 0;
+  animation: landing-text-up 0.8s ease-out 0.8s forwards;
+}
+.landing-hint {
+  opacity: 0;
+  animation: landing-text-up 0.6s ease-out 1.4s forwards;
+}
+
+/* Scroll reveal */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  opacity: 0;
+}
+.reveal.revealed {
+  animation: reveal-up 0.7s ease-out forwards;
 }
 
 @keyframes blink {

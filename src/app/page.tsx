@@ -1,6 +1,8 @@
 import Image from "next/image";
 import CaseFiles from "@/components/CaseFiles";
 import HeroTerminal from "@/components/HeroTerminal";
+import Landing from "@/components/Landing";
+import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import {
   arsenal,
@@ -22,6 +24,7 @@ const NAV = [
 export default function Home() {
   return (
     <>
+      <Landing />
       <header className="sticky top-0 z-20 border-b border-line/70 bg-bg/80 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
           <a href="#top" className="font-mono text-sm text-fg">
@@ -81,16 +84,19 @@ export default function Home() {
         </section>
 
         {/* Stats */}
-        <section className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="bg-panel p-6">
-              <p className="font-mono text-3xl font-bold text-accent">{s.value}</p>
-              <p className="mt-1 text-sm text-muted">{s.label}</p>
-            </div>
-          ))}
-        </section>
+        <ScrollReveal>
+          <section className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label} className="bg-panel p-6">
+                <p className="font-mono text-3xl font-bold text-accent">{s.value}</p>
+                <p className="mt-1 text-sm text-muted">{s.label}</p>
+              </div>
+            ))}
+          </section>
+        </ScrollReveal>
 
         {/* About */}
+        <ScrollReveal>
         <section id="about" className="scroll-mt-24 py-24">
           <SectionHeading index="01" label="about" title="Curious about how things break." />
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
@@ -138,15 +144,19 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </ScrollReveal>
 
         {/* Case files */}
+        <ScrollReveal>
         <section id="cases" className="scroll-mt-24 py-24">
           <SectionHeading index="02" label="case-files" title="Work, written up like a report." />
           <p className="-mt-6 mb-8 font-mono text-sm text-muted">hover to preview · click to open the full report</p>
           <CaseFiles cases={cases} />
         </section>
+        </ScrollReveal>
 
         {/* Arsenal */}
+        <ScrollReveal>
         <section id="arsenal" className="scroll-mt-24 py-24">
           <SectionHeading index="03" label="arsenal" title="Tools I reach for." />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -167,12 +177,14 @@ export default function Home() {
             ))}
           </div>
         </section>
+        </ScrollReveal>
 
         {/* Certification */}
+        <ScrollReveal>
         <section id="certs" className="scroll-mt-24 py-24">
           <SectionHeading index="04" label="certs" title="Certified to break in." />
           <div className="relative overflow-hidden rounded-xl border border-accent/40 bg-panel p-8 sm:p-10">
-            <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+            <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
             <div className="grid gap-8 md:grid-cols-[1fr_1.2fr]">
               <div>
                 <p className="font-mono text-xs text-muted">
@@ -202,8 +214,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </ScrollReveal>
 
         {/* Contact */}
+        <ScrollReveal>
         <section id="contact" className="scroll-mt-24 py-24">
           <SectionHeading index="05" label="contact" title="Let's talk security." />
           <div className="rounded-xl border border-line bg-panel p-6 font-mono text-sm sm:p-8">
@@ -221,6 +235,7 @@ export default function Home() {
             </ul>
           </div>
         </section>
+        </ScrollReveal>
       </main>
 
       <footer className="border-t border-line py-8 text-center font-mono text-xs text-muted">
@@ -235,7 +250,7 @@ function Portrait() {
   return (
     <div className="relative order-1 mx-auto w-full max-w-[250px] sm:max-w-sm lg:order-2 lg:max-w-none">
       {/* glow + grid behind the cutout */}
-      <div className="absolute inset-x-[8%] bottom-0 top-[12%] rounded-t-full bg-[radial-gradient(circle_at_50%_35%,rgb(61_255_154/0.28),transparent_65%)]" />
+      <div className="absolute inset-x-[8%] bottom-0 top-[12%] rounded-t-full bg-[radial-gradient(circle_at_50%_35%,rgb(0_212_255/0.28),transparent_65%)]" />
       <div className="absolute inset-x-[8%] bottom-0 top-[12%] rounded-t-full border border-accent/20" />
 
       {/* HUD corner brackets */}
