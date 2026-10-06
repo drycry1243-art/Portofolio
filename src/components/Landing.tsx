@@ -12,21 +12,23 @@ export default function Landing() {
 
     const update = () => {
       const scrollY = window.scrollY;
-      const threshold = 200;
+      const vh = window.innerHeight;
+      const fadeStart = vh * 0.3;
+      const fadeEnd = vh * 0.85;
 
-      if (scrollY <= 10) {
+      if (scrollY <= fadeStart) {
         el.style.opacity = "1";
         el.style.pointerEvents = "auto";
-      } else if (scrollY < threshold) {
-        const t = (scrollY - 10) / (threshold - 10);
-        el.style.opacity = String(Math.max(1 - t * 1.2, 0));
+      } else if (scrollY < fadeEnd) {
+        const t = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+        el.style.opacity = String(1 - t);
         el.style.pointerEvents = "none";
       } else {
         el.style.opacity = "0";
         el.style.pointerEvents = "none";
       }
 
-      if (firstLoad && scrollY >= threshold) setFirstLoad(false);
+      if (firstLoad && scrollY >= fadeEnd) setFirstLoad(false);
     };
 
     update();

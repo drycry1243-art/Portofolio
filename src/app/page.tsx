@@ -56,6 +56,9 @@ export default function Home() {
       </header>
 
       <main id="top" className="mx-auto max-w-6xl px-4 sm:px-6">
+        {/* Spacer for landing title screen */}
+        <div className="h-screen" aria-hidden="true" />
+
         {/* Hero — always visible, not wrapped in ScrollReveal */}
         <section className="grid items-center gap-12 py-16 lg:grid-cols-[1.15fr_1fr] lg:py-24">
           <div className="order-2 lg:order-1">
