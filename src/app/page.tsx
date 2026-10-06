@@ -56,8 +56,7 @@ export default function Home() {
       </header>
 
       <main id="top" className="mx-auto max-w-6xl px-4 sm:px-6">
-        {/* Hero */}
-        <ScrollReveal>
+        {/* Hero — always visible, not wrapped in ScrollReveal */}
         <section className="grid items-center gap-12 py-16 lg:grid-cols-[1.15fr_1fr] lg:py-24">
           <div className="order-2 lg:order-1">
             <p className="font-mono text-sm text-accent">
@@ -89,7 +88,6 @@ export default function Home() {
           </div>
           <Portrait />
         </section>
-        </ScrollReveal>
 
         {/* Stats */}
         <ScrollReveal>
