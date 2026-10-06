@@ -214,5 +214,10 @@ export const experience = [
       "Coordinated internal events, managing logistics and schedules to ensure successful execution",
       "Part of the Techno staff team, guiding fellow activists and students to their seats",
     ],
+    experienceGained: [
+      "Content creation and social media marketing strategy",
+      "Event planning, logistics coordination, and on-site execution",
+      "Cross-team collaboration within a large student organization",
+    ],
   },
 ];

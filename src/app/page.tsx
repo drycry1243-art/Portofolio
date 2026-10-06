@@ -120,6 +120,16 @@ export default function Home() {
                       <li key={p}>· {p}</li>
                     ))}
                   </ul>
+                  {e.experienceGained && (
+                    <>
+                      <p className="mt-3 font-mono text-xs text-accent">Experience Gained:</p>
+                      <ul className="mt-1 space-y-1 text-sm text-fg/75">
+                        {e.experienceGained.map((g) => (
+                          <li key={g}>· {g}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </InfoBlock>
               ))}
               <InfoBlock title="languages">
