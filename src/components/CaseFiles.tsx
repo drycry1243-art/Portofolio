@@ -29,7 +29,7 @@ export default function CaseFiles({ cases }: { cases: CaseFile[] }) {
             key={c.id}
             type="button"
             onClick={() => setOpen(c)}
-            className="group relative flex flex-col overflow-hidden rounded-xl border border-line bg-panel p-6 text-left transition duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_0_50px_-12px_rgb(61_255_154/0.4)] focus-visible:border-accent focus-visible:outline-none"
+            className="group card-glow relative flex flex-col overflow-hidden p-6 text-left focus-visible:border-accent focus-visible:outline-none"
           >
             {/* scan line that sweeps down on hover */}
             <span className="scan pointer-events-none absolute inset-x-0 top-0 h-16 -translate-y-full bg-gradient-to-b from-transparent via-accent/10 to-transparent opacity-0 group-hover:opacity-100" />
@@ -84,7 +84,7 @@ export default function CaseFiles({ cases }: { cases: CaseFile[] }) {
         onClose={() => setOpen(null)}
         onClick={(e) => e.target === e.currentTarget && setOpen(null)}
         aria-labelledby="case-title"
-        className="m-auto max-h-[90vh] w-[min(760px,calc(100vw-2rem))] overflow-hidden rounded-xl border border-accent/40 bg-panel p-0 text-fg shadow-[0_0_80px_-10px_rgb(61_255_154/0.35)] backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+        className="m-auto max-h-[90vh] w-[min(760px,calc(100vw-2rem))] overflow-hidden rounded-xl border border-accent/40 bg-panel p-0 text-fg shadow-[0_0_80px_-10px_rgb(0_212_255/0.35)] backdrop:bg-black/70 backdrop:backdrop-blur-sm"
       >
         {open && <Dossier c={open} onClose={() => setOpen(null)} />}
       </dialog>
@@ -170,7 +170,7 @@ function Dossier({ c, onClose }: { c: CaseFile; onClose: () => void }) {
         <Block label="tooling">
           <ul className="flex flex-wrap gap-2">
             {c.tools.map((t) => (
-              <li key={t} className="rounded border border-line px-2.5 py-1 font-mono text-xs text-fg/80">
+              <li key={t} className="tag-pill rounded-full border border-line px-3 py-1 font-mono text-xs text-fg/80">
                 {t}
               </li>
             ))}

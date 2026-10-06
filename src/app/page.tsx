@@ -85,9 +85,9 @@ export default function Home() {
 
         {/* Stats */}
         <ScrollReveal>
-          <section className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-4">
+          <section className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {stats.map((s) => (
-              <div key={s.label} className="bg-panel p-6">
+              <div key={s.label} className="stat-card card-glow p-6">
                 <p className="font-mono text-3xl font-bold text-accent">{s.value}</p>
                 <p className="mt-1 text-sm text-muted">{s.label}</p>
               </div>
@@ -161,13 +161,13 @@ export default function Home() {
           <SectionHeading index="03" label="arsenal" title="Tools I reach for." />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {arsenal.map((a) => (
-              <div key={a.group} className="rounded-xl border border-line bg-panel p-5">
+              <div key={a.group} className="card-glow p-5">
                 <p className="font-mono text-xs uppercase tracking-wider text-accent">{a.group}</p>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {a.items.map((i) => (
                     <li
                       key={i}
-                      className="rounded border border-line px-2.5 py-1 text-sm text-fg/80"
+                      className="tag-pill rounded-full border border-line px-3 py-1 text-sm text-fg/80"
                     >
                       {i}
                     </li>
@@ -220,7 +220,7 @@ export default function Home() {
         <ScrollReveal>
         <section id="contact" className="scroll-mt-24 py-24">
           <SectionHeading index="05" label="contact" title="Let's talk security." />
-          <div className="rounded-xl border border-line bg-panel p-6 font-mono text-sm sm:p-8">
+          <div className="card-glow p-6 font-mono text-sm sm:p-8">
             <p>
               <span className="text-accent">➜</span> <span className="text-amber">~</span> ./contact --jovan
             </p>
@@ -279,7 +279,7 @@ function Portrait() {
 
 function InfoBlock({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-line bg-panel p-5">
+    <div className="card-glow p-5">
       <p className="mb-2 font-mono text-xs uppercase tracking-wider text-accent">{title}</p>
       {children}
     </div>

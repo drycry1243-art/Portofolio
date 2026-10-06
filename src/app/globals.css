@@ -117,6 +117,68 @@ body {
   animation: reveal-up 0.7s ease-out forwards;
 }
 
+/* Card with gradient border */
+.card-glow {
+  position: relative;
+  background: var(--panel);
+  border-radius: 0.75rem;
+  border: 1px solid var(--line);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.card-glow:hover {
+  border-color: rgb(0 212 255 / 0.4);
+  box-shadow: 0 0 30px -8px rgb(0 212 255 / 0.15), inset 0 1px 0 rgb(255 255 255 / 0.04);
+  transform: translateY(-2px);
+}
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgb(0 212 255 / 0.06), transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Stats card */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.stat-card:hover {
+  transform: scale(1.03);
+}
+.stat-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.stat-card:hover::after {
+  opacity: 1;
+}
+
+/* Arsenal tag pill */
+.tag-pill {
+  transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.tag-pill:hover {
+  background: rgb(0 212 255 / 0.1);
+  border-color: rgb(0 212 255 / 0.4);
+  color: var(--accent);
+  box-shadow: 0 0 12px -4px rgb(0 212 255 / 0.3);
+}
+
 @keyframes blink {
   50% {
     opacity: 0;

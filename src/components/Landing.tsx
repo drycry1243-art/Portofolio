@@ -6,8 +6,13 @@ export default function Landing() {
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setGone(true), 3200);
-    return () => clearTimeout(t);
+    const dismiss = () => setGone(true);
+    const t = setTimeout(dismiss, 3200);
+    window.addEventListener("scroll", dismiss, { once: true });
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("scroll", dismiss);
+    };
   }, []);
 
   if (gone) return null;
@@ -15,6 +20,7 @@ export default function Landing() {
   return (
     <div className="landing fixed inset-0 z-50 flex flex-col items-center justify-center bg-bg">
       <div className="absolute inset-0 grid-bg opacity-40" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgb(0_212_255/0.08),transparent_70%)]" />
       <div className="relative text-center px-4">
         <p className="landing-text font-mono text-sm text-accent tracking-widest uppercase">
           initializing secure connection...
