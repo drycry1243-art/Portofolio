@@ -27,15 +27,21 @@ export default function Home() {
       <Landing />
       <header className="sticky top-0 z-20 border-b border-line/70 bg-bg/80 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-          <a href="#top" className="font-mono text-sm text-fg">
-            <span className="text-accent">~/</span>
-            {profile.handle}
+          <a href="#top" className="group flex items-center gap-2 font-mono text-sm text-fg">
+            <span className="flex h-7 w-7 items-center justify-center rounded border border-accent/50 text-xs font-bold text-accent transition group-hover:bg-accent group-hover:text-bg">
+              JD
+            </span>
+            <span className="hidden sm:inline">
+              <span className="text-fg font-semibold">jovan</span>
+              <span className="text-accent">_</span>
+              <span className="text-muted">dave</span>
+            </span>
           </a>
-          <ul className="hidden gap-6 font-mono text-sm text-muted md:flex">
+          <ul className="hidden gap-1 font-mono text-sm text-muted md:flex">
             {NAV.map((n) => (
               <li key={n.href}>
-                <a href={n.href} className="transition hover:text-accent">
-                  ./{n.label}
+                <a href={n.href} className="rounded px-3 py-1.5 transition hover:bg-accent/10 hover:text-accent">
+                  {n.label}
                 </a>
               </li>
             ))}
