@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 type Line = { cmd: string; out: string[] };
 
 const SCRIPT: Line[] = [
-  { cmd: "whoami", out: ["jovan_dave · offensive security student @ BINUS"] },
+  { cmd: "whoami", out: ["jovan_dave · aspiring junior cybersecurity practitioner @ BINUS"] },
   {
     cmd: "cat certs.txt",
     out: ["[+] CRTA  Certified Red Team Analyst  (CyberWarfare Labs)"],

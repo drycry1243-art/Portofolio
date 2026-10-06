@@ -3,16 +3,16 @@
 export const profile = {
   name: "Jovan Dave",
   handle: "jovan",
-  role: "Offensive Security Student",
+  role: "Aspiring Junior Cybersecurity Practitioner",
   tagline:
-    "I break into systems so they can be built back stronger. Cybersecurity student at BINUS University, focused on penetration testing and red teaming.",
-  location: "West Jakarta, Indonesia",
+    "Cybersecurity student at BINUS University with a strong interest in penetration testing, offensive and defensive security.",
+  location: "Kembangan Utara, West Jakarta 11610",
   email: "jovan.dv31@gmail.com",
   linkedin: "https://www.linkedin.com/in/jovan-dave-34765a326/",
   github: "https://github.com/drycry1243-art",
   about: [
-    "I'm a Cybersecurity student at BINUS University and an aspiring junior security practitioner with a strong pull toward offensive security. Most of my learning happens hands-on: home labs, Hack The Box machines and picoCTF challenges.",
-    "I like understanding how things fail. That means chaining small bugs into full compromise, and researching how identities (human and non-human) get abused inside enterprise systems.",
+    "I am a Cybersecurity student at BINUS University and an aspiring Junior Cybersecurity Practitioner with a strong interest in penetration testing, offensive and defensive security. Actively developing hands-on skills through home labs, Hack The Box, and picoCTF.",
+    "I'm always eager to explore new domains and continuously expand my knowledge within the cybersecurity landscape.",
   ],
   education: {
     school: "Bina Nusantara University",
@@ -53,7 +53,7 @@ export const cases: CaseFile[] = [
     period: "Aug – Sep 2025",
     severity: "Critical",
     summary:
-      "Team walkthrough of a Hard-rated machine that required chaining seven vulnerabilities from a login page all the way to root.",
+      "Completed the Guardian (Hard) machine on Hack The Box as part of a group, studying and following existing writeups to understand each exploitation step. The machine involved a chain of 7 vulnerabilities: default credentials, IDOR, hardcoded credentials in source code, stored XSS (CVE-2025-22131), CSRF, LFI to RCE via PHP filter chains, and privilege escalation to root.",
     scope: "HTB machine \"Guardian\" (Linux, PHP web stack)",
     tools: ["Nmap", "Burp Suite", "PHP filter chains", "Kali Linux"],
     approach: [
@@ -70,8 +70,8 @@ export const cases: CaseFile[] = [
       "LFI escalated to RCE via PHP filter chains, then privesc to root",
     ],
     lessons: [
-      "How PHP filter chains turn a file include into code execution",
-      "Thorough enumeration beats rushing the exploit",
+      "How PHP filter chains can escalate a Local File Inclusion into Remote Code Execution",
+      "The importance of thorough enumeration before attempting exploitation",
     ],
   },
   {
@@ -81,7 +81,7 @@ export const cases: CaseFile[] = [
     period: "Feb – Jun 2026",
     severity: "High",
     summary:
-      "Conducted penetration testing on a government Android application using OWASP MASTG methodology, identifying access control weaknesses and compiling a structured vulnerability findings report.",
+      "Conducted penetration testing on a government Android application using Burp Suite, Frida, and Objection, referencing the OWASP MASTG. Compiled a structured vulnerability findings report.",
     scope: "Government Android application",
     tools: ["Burp Suite", "Frida", "Objection", "MobSF", "JADX"],
     approach: [
@@ -92,12 +92,13 @@ export const cases: CaseFile[] = [
       "Compiled a structured vulnerability findings report",
     ],
     findings: [
-      "Identified vulnerabilities in the application via static and dynamic analysis",
-      "Discovered access control weaknesses (IDOR) in the application",
+      "Identified vulnerabilities in the application",
+      "Discovered access control weaknesses (IDOR)",
     ],
     lessons: [
-      "Hands-on mobile pentesting workflow: static analysis → dynamic instrumentation → reporting",
-      "How OWASP MASTG guides a structured approach to mobile security testing",
+      "Reviewed source code using JADX and MobSF",
+      "Performed dynamic analysis with Frida and Objection",
+      "Identified access control weaknesses (IDOR)",
     ],
   },
   {
@@ -107,7 +108,7 @@ export const cases: CaseFile[] = [
     period: "Aug – Sep 2025",
     severity: "Research",
     summary:
-      "Academic paper proposing a framework to automatically discover and risk-score non-human identities (service accounts, API keys, OAuth tokens) in enterprise IAM.",
+      "Authored an academic research paper on a framework for automated discovery and risk scoring of non-human identities (service accounts, API keys, OAuth tokens) in enterprise IAM systems. Applied a weighted scoring approach combined with machine learning.",
     scope: "Enterprise Identity & Access Management",
     tools: ["Weighted risk scoring", "Machine learning", "STRIDE", "OAuth / JWT"],
     approach: [
@@ -122,8 +123,9 @@ export const cases: CaseFile[] = [
       "Proposed a \"Double IAM, Double Backend\" tiered architecture for credential isolation",
     ],
     lessons: [
-      "IAM fundamentals: authN, authZ and the identity lifecycle",
-      "Spotting gaps before they become breaches",
+      "IAM fundamentals: authentication, authorization, and identity lifecycle management",
+      "Common IAM attack vectors: IDOR/BOLA, token hijacking, MFA fatigue, privilege creep",
+      "Proposed a \"Double IAM and Double Backend\" tiered architecture concept for enhanced credential isolation",
     ],
   },
   {
@@ -133,7 +135,7 @@ export const cases: CaseFile[] = [
     period: "Feb – Jun 2026",
     severity: "Medium",
     summary:
-      "Team-built flood early-warning system covering 26 subdistricts across 5 Jakarta regions, presented under PKM-KC, Indonesia's national student innovation program.",
+      "Built a flood early-warning system for Jakarta with a team, covering 26 subdistricts across 5 Jakarta regions. Designed the solution architecture using a HistGradientBoosting model with a 6-hour prediction lead time. Presented as a PKM-KC project (a national student research/innovation grant program).",
     scope: "26 subdistricts · 5 regions · 6-hour prediction lead time",
     tools: ["HistGradientBoosting", "Python", "ML pipeline", "Dashboard"],
     approach: [
@@ -144,11 +146,12 @@ export const cases: CaseFile[] = [
       "Presented the project under PKM-KC",
     ],
     findings: [
-      "Designed the solution architecture around a HistGradientBoosting model",
-      "Built a smart dashboard to review and predict weather data (dummy data)",
+      "Designed the solution architecture using a HistGradientBoosting model with a 6-hour prediction lead time",
+      "Built a smart dashboard for reviewing and predicting weather data (using dummy data)",
     ],
     lessons: [
-      "How sensor data flows into flood predictions through an ML pipeline",
+      "Building a smart dashboard for reviewing and predicting weather data (using dummy data)",
+      "Understanding how sensor data is processed into flood predictions through a machine learning pipeline",
       "Presenting technical work to a non-technical audience",
     ],
   },
@@ -161,7 +164,7 @@ export const arsenal = [
   },
   {
     group: "Red Teaming",
-    items: ["Recon", "Network pivoting (Ligolo)", "MITRE ATT&CK", "Active Directory", "Kerberos attacks"],
+    items: ["CRTA certified", "Reconnaissance", "Network pivoting", "MITRE ATT&CK"],
   },
   {
     group: "IAM & Threat Modeling",
@@ -172,8 +175,12 @@ export const arsenal = [
     items: ["IP addressing", "Subnetting", "Routing", "Cisco Packet Tracer"],
   },
   {
-    group: "Platforms & Code",
-    items: ["Kali Linux", "VMware", "Docker", "Hack The Box", "Python", "PHP"],
+    group: "Platforms",
+    items: ["Kali Linux", "VMware", "Docker", "Hack The Box"],
+  },
+  {
+    group: "Artificial Intelligence",
+    items: ["Claude + Claude Code", "Gemini"],
   },
   {
     group: "Soft Skills",
@@ -189,11 +196,10 @@ export const certification = {
   verifyUrl:
     "https://labs.cyberwarfare.live/credential/achievement/6ab79c8f65159096baebc5ba",
   covers: [
-    "Red team methodology & attack lifecycle",
-    "MITRE ATT&CK TTP mapping",
-    "External & internal reconnaissance",
-    "Kerberos-based attacks in Active Directory",
-    "Network pivoting with Ligolo",
+    "Red Team Methodology and attack lifecycle",
+    "MITRE ATT&CK TTPs mapping",
+    "External and Internal Reconnaissance",
+    "Network pivoting using Ligolo",
     "Lateral movement across segregated networks",
   ],
 };
@@ -204,9 +210,9 @@ export const experience = [
     org: "HIMTI (BINUS IT Student Association)",
     period: "Jan 2025 – May 2026",
     points: [
-      "Created social media content that grew audience interaction",
-      "Coordinated internal events: logistics, schedules, execution",
-      "Techno staff team, guiding activists and students on event days",
+      "Developed engaging content for social media marketing, enhancing audience interaction and brand visibility",
+      "Coordinated internal events, managing logistics and schedules to ensure successful execution",
+      "Part of the Techno staff team, guiding fellow activists and students to their seats",
     ],
   },
 ];
