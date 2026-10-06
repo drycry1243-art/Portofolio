@@ -25,7 +25,7 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "3", label: "case files closed" },
+  { value: "4", label: "case files closed" },
   { value: "CRTA", label: "red team certified" },
   { value: "7", label: "vuln chain to root" },
   { value: "26", label: "subdistricts covered" },
@@ -76,9 +76,35 @@ export const cases: CaseFile[] = [
   },
   {
     id: "CASE-002",
+    title: "Mobile Penetration Testing",
+    type: "Government Android App Assessment",
+    period: "Feb – Jun 2026",
+    severity: "High",
+    summary:
+      "Conducted penetration testing on a government Android application using OWASP MASTG methodology, identifying access control weaknesses and compiling a structured vulnerability findings report.",
+    scope: "Government Android application",
+    tools: ["Burp Suite", "Frida", "Objection", "MobSF", "JADX"],
+    approach: [
+      "Reviewed source code using JADX and MobSF",
+      "Performed dynamic analysis with Frida and Objection",
+      "Referenced OWASP MASTG throughout testing",
+      "Identified access control weaknesses (IDOR)",
+      "Compiled a structured vulnerability findings report",
+    ],
+    findings: [
+      "Identified vulnerabilities in the application via static and dynamic analysis",
+      "Discovered access control weaknesses (IDOR) in the application",
+    ],
+    lessons: [
+      "Hands-on mobile pentesting workflow: static analysis → dynamic instrumentation → reporting",
+      "How OWASP MASTG guides a structured approach to mobile security testing",
+    ],
+  },
+  {
+    id: "CASE-003",
     title: "Non-Human Identity Risk Scoring",
     type: "IAM Research Paper",
-    period: "Feb – Jun 2026",
+    period: "Aug – Sep 2025",
     severity: "Research",
     summary:
       "Academic paper proposing a framework to automatically discover and risk-score non-human identities (service accounts, API keys, OAuth tokens) in enterprise IAM.",
@@ -101,7 +127,7 @@ export const cases: CaseFile[] = [
     ],
   },
   {
-    id: "CASE-003",
+    id: "CASE-004",
     title: "Jakarta Flood Early Warning System",
     type: "PKM-KC National Grant Project",
     period: "Feb – Jun 2026",
@@ -131,7 +157,7 @@ export const cases: CaseFile[] = [
 export const arsenal = [
   {
     group: "Penetration Testing",
-    items: ["Burp Suite", "Nmap", "Metasploit", "Gobuster"],
+    items: ["Burp Suite", "Nmap", "Frida", "Objection", "MobSF", "JADX"],
   },
   {
     group: "Red Teaming",
@@ -151,7 +177,7 @@ export const arsenal = [
   },
   {
     group: "Soft Skills",
-    items: ["Project management", "Team collaboration", "Active listening"],
+    items: ["Project management", "Team collaboration", "Active listening", "Problem solving"],
   },
 ];
 

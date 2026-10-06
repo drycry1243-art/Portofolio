@@ -12,7 +12,7 @@ const SCRIPT: Line[] = [
   },
   {
     cmd: "ls ./case-files",
-    out: ["htb-guardian/  iam-research/  flood-ews/"],
+    out: ["htb-guardian/  mobile-pentest/  iam-research/  flood-ews/"],
   },
   { cmd: "echo $STATUS", out: ["open to internships & collaboration"] },
 ];
